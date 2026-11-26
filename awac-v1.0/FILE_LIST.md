@@ -16,11 +16,13 @@ The added files in this revision include Dee C's two no-decision fixes: an optio
 
 Commit 2 applies David's cleanup: the Phase 2 path comment in `code/v1_0_analysis/estimate_joint.py` was removed (the same edit as in the STAR copy). INTERNAL and UNREVIEWED strings were left unchanged. Hashes below are after that cleanup.
 
+Commit 3 adds `inputs/DATA_DICTIONARY.md` and `inputs/SHA256SUMS-v1.0.1-data.txt`, the two Version 1.0.1 data files that were not on a public Zenodo record, plus `inputs/README.md`. They are required data under CC BY-SA 4.0, not code. The analysis scripts are unchanged. Hashes below include these files.
+
 ## Files
 
 | Path | Bytes | SHA-256 | Origin |
 |---|---:|---|---|
-| RUN.md | 9,108 | f18859a1d604b61b52ae067f14b4b1e5722a8304f24d8705a5c19a7a6fea9d7f | added |
+| RUN.md | 11,039 | ed7198762bbf0c8a57143ca8cb1ced56c6152c24ce25d68d7be6b05be4983b1b | added |
 | code/awac_build_docs.py | 29,192 | a47e8a385f9d070052f739bd19a1a8ac280daaa7b4936e5f00d8919ab6ef63e8 | local package (not in the Zenodo deposit) |
 | code/awac_estimate.py | 49,105 | 7d7eb86cf9d40c03fdd103af686c51124da69151316cd7aac866d59baf895c3b | local package (not in the Zenodo deposit) |
 | code/check_consistency_awac.py | 21,186 | 87c6c8fad604c1ac9ae63a5c3ffea38f1955953dbceae00aec57743dc7acabb3 | local package (not in the Zenodo deposit) |
@@ -35,12 +37,15 @@ Commit 2 applies David's cleanup: the Phase 2 path comment in `code/v1_0_analysi
 | code/v1_0_analysis/with_without_contrast.py | 3,333 | 6c8ba3b794806c1f231ab831d4e7e4c1867c8f83ca6ddac3b01d7cbbcdb02873 | local package (not in the Zenodo deposit) |
 | code/v1_0_publication/check_consistency.py | 19,996 | 2b350939406503004c29e380fcbfb521c4846d4637987dbdaafe409745696521 | local package (not in the Zenodo deposit) |
 | code/v1_0_publication/common.py | 4,501 | 2f0eb74c57229c03ebda7902ef3cfa106df4e44cfe30d3c4f9cc8324121d6f78 | local package (not in the Zenodo deposit) |
+| inputs/DATA_DICTIONARY.md | 8,883 | d5298a1a129672c469d8bc8030ab80fbc465dfeb346ad6cd3e1dd62326940dc4 | added (required data, not code) |
+| inputs/README.md | 2,397 | 9a43de6e8051574345ec01195fd5e965d2da54cefa695f028ec720f05f4b8ed7 | added |
+| inputs/SHA256SUMS-v1.0.1-data.txt | 1,216 | 1b87b2dbb51d0f69bee17854ceaeedb0c13c3c4b16b083dfcf388797ca6a830a | added (required data, not code) |
 | requirements.txt | 1,214 | 53bfaf12e6db1e1cfddb3257125b1117571f11688c11bfe2bd870315f173d473 | added |
 
 ## Scan (code only)
 
-Code files present (excluding added RUN.md, requirements.txt, FILE_LIST.md): .py×12, .sh×1, .txt×1
-No data files found (no CSV, Parquet, XLSX, zip, or PUMS microdata).
+Code files present (excluding added RUN.md, requirements.txt, FILE_LIST.md, and inputs/): .py×12, .sh×1, .txt×1
+No Census microdata, Parquet, XLSX, zip, or run-output CSVs. Commit 3 adds two required data inputs under `inputs/` (DATA_DICTIONARY.md and SHA256SUMS-v1.0.1-data.txt), not code.
 No credential, password, API key, or private-key material found.
 No Phase 2 path comments remain.
 

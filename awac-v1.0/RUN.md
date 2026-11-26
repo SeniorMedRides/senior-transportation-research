@@ -42,9 +42,16 @@ code/run_all.sh INPUTS_DIR
 
 `code/v1_0_publication/` is a copy of Version 1.0.1 publication-consistency code. It is included because it stood in `code/` at the time of the run. It is **not** called by `run_all.sh`.
 
-## Excluded-but-required inputs (not in this package)
+## Version 1.0.1 data folder (required)
 
-`run_all.sh` and `awac_estimate.py` also require a Version 1.0.1 data folder at `v1_0_1_data/` beside `code/` (or another path passed as `--v10-data`). That folder is **data** (reference CSVs, published estimate CSVs, and a data dictionary), so it is excluded from this code-only package. `awac_estimate.py` reads `study_areas.csv` from it for display labels and a PUMA cross-check, and it verifies every file against `SHA256SUMS-v1.0.1-data.txt`.
+`run_all.sh` and `awac_estimate.py` require a Version 1.0.1 data folder at `v1_0_1_data/` beside `code/` (or another path passed as `--v10-data`). The checker logic is unchanged. `awac_estimate.py` reads `study_areas.csv` from that folder for display labels and a PUMA cross-check, and it verifies every file against `SHA256SUMS-v1.0.1-data.txt`.
+
+Two of the 14 files are in this package, under `inputs/` (required data under CC BY-SA 4.0, not code; see `inputs/README.md`):
+
+- `inputs/DATA_DICTIONARY.md` (8,883 bytes; SHA-256 d5298a1a129672c469d8bc8030ab80fbc465dfeb346ad6cd3e1dd62326940dc4)
+- `inputs/SHA256SUMS-v1.0.1-data.txt` (the checksum list the run uses)
+
+The other 13 files are on the public Senior Transportation Access Report Version 1.0 deposit (DOI 10.5281/zenodo.24210261), inside `senior-transportation-access-report-v1.0.zip` under `senior-transportation-access-report-v1.0/data/`, with the exact SHA-256 values in that checksum list. `study_areas.csv` and `standard_population.csv` are also on the Aging Without a Car record (DOI 10.5281/zenodo.24235541) with the same hashes.
 
 Required files and SHA-256 (from `run-v1.2/v1_0_1_data/SHA256SUMS-v1.0.1-data.txt`):
 
@@ -65,14 +72,37 @@ Required files and SHA-256 (from `run-v1.2/v1_0_1_data/SHA256SUMS-v1.0.1-data.tx
 | with_without_contrast.csv | 4df8fbaa55b2249e89c14b9952bb1a1e90263880b78ead5862a824a141b53d7a |
 | with_without_std.csv | 485dc8bc9730b57fbe7b70f8c3b22dcfef21d270fc4c6d246a07564b158832d9 |
 
-Most of these CSVs, including `study_areas.csv` and `standard_population.csv`, appear with the same SHA-256 in the STAR Zenodo zip (`senior-transportation-access-report-v1.0.zip`, DOI 10.5281/zenodo.24210261) and in `smr-production-v1.0.1-content-locked-2026-11-11.zip`. **Do not** use the `DATA_DICTIONARY.md` from the STAR Zenodo zip for this check: that file differs (Zenodo SHA-256 07821efd21f2d034c7d949582b2e75bb2a63f54ba5baa23855936b5d12a8c41f). Use the Version 1.0.1 dictionary hashed above, from the production-v1.0.1 package.
+**Do not** use the `DATA_DICTIONARY.md` from either public Zenodo record (STAR 24210261 is 07821efd21f2d034c7d949582b2e75bb2a63f54ba5baa23855936b5d12a8c41f; AWAC 24235541 is 7cf3d6dd426327af0293e29c3065ce5db3a505fce1ee317241ae074cc8e3ac1d). Use only `inputs/DATA_DICTIONARY.md`.
+
+Assemble `v1_0_1_data/` from `awac-v1.0/` as follows:
+
+```
+mkdir -p v1_0_1_data
+cp inputs/DATA_DICTIONARY.md inputs/SHA256SUMS-v1.0.1-data.txt v1_0_1_data/
+# After unpacking the STAR Zenodo zip:
+cp /path/to/senior-transportation-access-report-v1.0/data/acs_published_context.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/age_specific.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/age_standardized.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/cdc_places_context.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/comparisons.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/headline_figures.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/joint_estimates.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/part_vs_whole.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/standard_population.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/study_areas.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/with_without_by_age.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/with_without_contrast.csv v1_0_1_data/
+cp /path/to/senior-transportation-access-report-v1.0/data/with_without_std.csv v1_0_1_data/
+( cd v1_0_1_data && sha256sum -c SHA256SUMS-v1.0.1-data.txt )
+```
 
 Expected layout:
 
 ```
 awac-v1.0/
   code/            (this package)
-  v1_0_1_data/     (excluded; required for run_all.sh and awac_estimate.py)
+  inputs/          (the two files that were not on a public Zenodo record)
+  v1_0_1_data/     (you assemble this: the two files from inputs/, plus the 13 CSVs from Zenodo)
 ```
 
 ## Census download disk space
