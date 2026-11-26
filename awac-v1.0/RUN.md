@@ -53,7 +53,7 @@ Two of the 14 files are in this package, under `inputs/` (required data under CC
 
 The other 13 files are on the public Senior Transportation Access Report Version 1.0 deposit (DOI 10.5281/zenodo.24210261), inside `senior-transportation-access-report-v1.0.zip` under `senior-transportation-access-report-v1.0/data/`, with the exact SHA-256 values in that checksum list. `study_areas.csv` and `standard_population.csv` are also on the Aging Without a Car record (DOI 10.5281/zenodo.24235541) with the same hashes.
 
-Required files and SHA-256 (from `run-v1.2/v1_0_1_data/SHA256SUMS-v1.0.1-data.txt`):
+Required files and SHA-256 (from the Version 1.0.1 data folder):
 
 | File | SHA-256 |
 |---|---|

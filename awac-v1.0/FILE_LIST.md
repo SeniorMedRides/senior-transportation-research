@@ -1,6 +1,6 @@
 # File list: Aging Without a Car v1.0 analysis code
 
-For Dee C's review before any public repository. This file is **ADDED**.
+Provenance and checksums for every file in this folder.
 
 ## Provenance (code was not on Zenodo)
 
@@ -22,7 +22,7 @@ Commit 3 adds `inputs/DATA_DICTIONARY.md` and `inputs/SHA256SUMS-v1.0.1-data.txt
 
 | Path | Bytes | SHA-256 | Origin |
 |---|---:|---|---|
-| RUN.md | 11,039 | ed7198762bbf0c8a57143ca8cb1ced56c6152c24ce25d68d7be6b05be4983b1b | added |
+| RUN.md | 11,019 | ba9df3473881a4d520a17f21f24a53c3b15b727a1d416af9b2979fc9b45ccd46 | added |
 | code/awac_build_docs.py | 29,192 | a47e8a385f9d070052f739bd19a1a8ac280daaa7b4936e5f00d8919ab6ef63e8 | local package (not in the Zenodo deposit) |
 | code/awac_estimate.py | 49,105 | 7d7eb86cf9d40c03fdd103af686c51124da69151316cd7aac866d59baf895c3b | local package (not in the Zenodo deposit) |
 | code/check_consistency_awac.py | 21,186 | 87c6c8fad604c1ac9ae63a5c3ffea38f1955953dbceae00aec57743dc7acabb3 | local package (not in the Zenodo deposit) |
@@ -38,7 +38,7 @@ Commit 3 adds `inputs/DATA_DICTIONARY.md` and `inputs/SHA256SUMS-v1.0.1-data.txt
 | code/v1_0_publication/check_consistency.py | 19,996 | 2b350939406503004c29e380fcbfb521c4846d4637987dbdaafe409745696521 | local package (not in the Zenodo deposit) |
 | code/v1_0_publication/common.py | 4,501 | 2f0eb74c57229c03ebda7902ef3cfa106df4e44cfe30d3c4f9cc8324121d6f78 | local package (not in the Zenodo deposit) |
 | inputs/DATA_DICTIONARY.md | 8,883 | d5298a1a129672c469d8bc8030ab80fbc465dfeb346ad6cd3e1dd62326940dc4 | added (required data, not code) |
-| inputs/README.md | 2,397 | 9a43de6e8051574345ec01195fd5e965d2da54cefa695f028ec720f05f4b8ed7 | added |
+| inputs/README.md | 2,523 | 35820653d7e192fe89e30104d794709b0a7ab89adeeab04432fc99dd509247a8 | added |
 | inputs/SHA256SUMS-v1.0.1-data.txt | 1,216 | 1b87b2dbb51d0f69bee17854ceaeedb0c13c3c4b16b083dfcf388797ca6a830a | added (required data, not code) |
 | requirements.txt | 1,214 | 53bfaf12e6db1e1cfddb3257125b1117571f11688c11bfe2bd870315f173d473 | added |
 

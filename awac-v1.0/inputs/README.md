@@ -11,6 +11,8 @@ These files are **required data inputs**, not analysis code. They are included s
 
 `DATA_DICTIONARY.md` is the Version 1.0.1 dictionary that `run_all.sh` and `awac_estimate.py` check. It is **not** the `DATA_DICTIONARY.md` on Zenodo records 24210261 or 24235541, which have different hashes. `SHA256SUMS-v1.0.1-data.txt` is the checksum list those scripts use to verify the 14-file Version 1.0.1 data folder.
 
+`DATA_DICTIONARY.md` is kept byte-exact, including its draft banner and placeholders, because the run checks its exact hash.
+
 ## How to assemble `v1_0_1_data/`
 
 The analysis scripts are unchanged. They still expect the 14-file folder at `v1_0_1_data/` beside `code/` (or another path passed as `--v10-data`).

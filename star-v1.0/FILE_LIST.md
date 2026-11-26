@@ -1,6 +1,6 @@
 # File list: Senior Transportation Access Report v1.0 analysis code
 
-For Dee C's review before any public repository. This file is **ADDED**.
+Provenance and checksums for every file in this folder.
 
 ## Provenance (code was not on Zenodo)
 
