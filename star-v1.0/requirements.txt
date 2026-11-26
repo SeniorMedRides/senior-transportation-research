@@ -1,0 +1,14 @@
+# Senior Transportation Access Report v1.0 — analysis environment
+# ADDED for this code package. Not part of the Zenodo deposit.
+#
+# The analysis scripts use the Python standard library only. No third-party
+# packages are required and none should be installed to reproduce Version 1.0.
+#
+# Source of the pin: code/DEPENDENCIES.md in
+# smr-production-v1.0.1-content-locked-2026-11-11.zip
+# (SHA-256 7d6f769896815c538e665090e49cbb4212795802e168aad54045cd3550c68c41),
+# checked on the build machine on November 10, 2026. The same note appears in
+# the Version 1.0 production package (identical DEPENDENCIES.md). The scripts
+# themselves state "Stdlib only" and "Python 3.9+".
+#
+# Python == 3.13.5

@@ -1,0 +1,24 @@
+# Aging Without a Car v1.0 — analysis environment
+# ADDED for this code package. Not part of the Zenodo deposit.
+#
+# The analysis scripts use the Python standard library only. No third-party
+# packages are required and none should be installed to reproduce Version 1.0.
+#
+# Sources of the pin:
+# - run-v1.2 logs (awac-run.log / awac-estimate-stdout.log) record
+#   "awac-run-1.2.0 started 2026-11-14T17:42:57-07:00; Python 3.13.5"
+#   in smr-aging-without-a-car-run-v1.2-2026-11-14.zip
+#   (SHA-256 3f073624fe387e8ab6fc29cb31274be882bf8e764dd35b349338f0aa8681c4c0).
+# - run-v1.2/README.md: "Python 3 standard library only".
+# - The reused Version 1.0 analysis copies are the STAR scripts, whose
+#   DEPENDENCIES.md (November 10, 2026) recorded Python 3.13.5.
+#
+# Python == 3.13.5
+
+# Optional (not required for the start-to-finish command, and not part of the
+# Zenodo deposit):
+#   python-docx == 1.2.0
+# Used only by code/v1_0_publication/check_consistency.py (import docx, inside
+# try/except ImportError; about line 230). That checker is not called by
+# run_all.sh. Version 1.2.0 is the version recorded in DEPENDENCIES.md of the
+# STAR production package (checked on the build machine on November 10, 2026).
