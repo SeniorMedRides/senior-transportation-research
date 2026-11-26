@@ -1,0 +1,20 @@
+# Raw Census downloads (fetched by the scripts, never committed)
+data/raw/
+*.zip
+psam_*.csv
+pums_*.csv
+
+# Run outputs and internal working files (may contain unsuppressed values)
+output/
+runs/
+quarantine/
+internal/
+*_full.csv
+*.xlsx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
