@@ -1,9 +1,9 @@
 """v1.1 quality checks by the author (Link). Not independent validation.
 Covers validator notes 1-3: CSV/dictionary reconciliation, --out protection, with/without contrast.
-Reads bundled v1.1 outputs/ and the frozen v1.0 package at /workspace/smr-phase1-estimates/ (read only)."""
+Reads bundled v1.1 outputs/ and the frozen v1.0 package at ../v1.0-package/ (read only; sibling of analysis/)."""
 import sys, os, csv, json, math, io, pathlib, unittest, tempfile
 BASE = pathlib.Path(__file__).resolve().parents[1]; sys.path.insert(0, str(BASE))
-V10 = pathlib.Path('/workspace/smr-phase1-estimates')
+V10 = pathlib.Path(__file__).resolve().parents[2] / 'v1.0-package'
 import estimate_joint as ej, supplementary_difference as sd, with_without_contrast as ww
 
 class Note1CsvDictionary(unittest.TestCase):
@@ -50,7 +50,7 @@ class Note3Contrast(unittest.TestCase):
     def test_every_area_difference_exceeds_moe(self):
         self.assertTrue(all(x['diff_exceeds_moe90'] for x in self.r.values()))
     def test_matches_validator_independent_csv(self):
-        p = pathlib.Path('/workspace/verify-2026-11-10/independent/out/indep_estimates.csv')
+        p = pathlib.Path(__file__).resolve().parents[2] / 'independent' / 'indep_estimates.csv'
         if not p.exists(): self.skipTest('validator evidence not present')
         for v in csv.DictReader(open(p)):
             x = self.r[v['area_id']]

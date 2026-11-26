@@ -30,7 +30,19 @@ Code-only package: Census files are downloaded by the command above, not shipped
 | study_areas.csv | Area labels and 2020 PUMA lists | a721ab91a941ca8cfb2307ac1d4b3c9fd0e7bb79fb9bd28e45f365155c6e5f87 |
 | standard_population.csv | Published S1 age-standard shares | 083466ed7f18bf14f39013da5edfbed2dee4dba4a231fbb247d4a86275c00f5f |
 
-Unit tests in `analysis/tests/` and `analysis/sensitivity/tests/` expect the original package `reference/` and `outputs/` folders and contain hardcoded `/workspace/...` paths (see `FILE_LIST.md`). They are not part of the start-to-finish command.
+## Unit tests (not part of the start-to-finish command)
+
+The tests in `analysis/tests/` and `analysis/sensitivity/tests/` are author quality checks. They are not required to reproduce the published estimates. After the path cleanup, they use paths relative to each test file. Extra files they may need are not in this package:
+
+- Bundled v1.1 outputs and reference files, as they stood in the validated analysis package, at `analysis/outputs/` (including `joint_estimates.json`, `joint_estimates.csv`, `with_without_contrast.json`, `with_without_contrast.csv`), `analysis/DATA_DICTIONARY.md`, `analysis/reference/pums-joint-feasibility.json`, and `analysis/sensitivity/outputs/`. Tests that read these files will error if they are absent.
+- The frozen Version 1.0 analysis package, read only, at `star-v1.0/v1.0-package/` (sibling of `analysis/`). Tests that need it (`test_v11.py`, `sensitivity/tests/test_with_without_std.py`) are skipped if that folder is absent. Place the v1.0 `outputs/` tree at `v1.0-package/outputs/` and the v1.0 sensitivity outputs at `v1.0-package/sensitivity/outputs/`.
+- Optional validator independent CSV at `star-v1.0/independent/indep_estimates.csv`. `test_v11.py` skips that test if the file is absent.
+- Real PUMS inputs at `analysis/inputs/` for the full-data class in `test_estimate_joint.py`. Set `SMR_SKIP_FULL=1` to skip those tests.
+
+From `analysis/`: `python3 -m unittest discover -s tests -v`
+
+From `analysis/sensitivity/`: `python3 -m unittest discover -s tests -v`
+
 
 ## Census download disk space
 

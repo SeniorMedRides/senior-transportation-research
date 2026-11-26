@@ -1,5 +1,5 @@
 """Link's automated QUALITY CHECKS. These are not independent validation.
-Run: python3 -m unittest discover -s tests -v   (from /workspace/smr-phase1-estimates)
+Run: python3 -m unittest discover -s tests -v   (from the analysis/ directory)
 Set SMR_SKIP_FULL=1 to skip the tests that read real PUMS zips."""
 import sys, os, json, math, pathlib, unittest, tempfile, zipfile, csv, io
 BASE = pathlib.Path(__file__).resolve().parents[1]; sys.path.insert(0, str(BASE))
@@ -50,7 +50,7 @@ class RealData(unittest.TestCase):
         ej.main(['--inputs', str(BASE/'inputs'), '--out', str(cls.out)])
         cls.res = {r['area_id']:r for r in json.loads((cls.out/'joint_estimates.json').read_text())['results']}
     def test_feasibility_match_nv_id(self):
-        # stored feasibility figures (/workspace/smr-phase2/pums-joint-feasibility.json, copied to reference/)
+        # stored feasibility figures, copied to reference/
         old = json.loads((BASE/'reference'/'pums-joint-feasibility.json').read_text())
         for o, aid in zip(old, ['las_vegas','boise']):
             for k, v in o.items():

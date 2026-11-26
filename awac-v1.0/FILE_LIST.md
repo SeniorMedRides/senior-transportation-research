@@ -12,7 +12,9 @@ The analysis scripts in this package were copied, byte-for-byte and unedited, fr
 
 Nothing was taken from `phase2-*` folders, Stage B or quarantine paths, MANIFEST-ADDENDUM files, or Dee C INTERNAL reports. The `validation-package-dee-c/` tree inside the run zip was not copied.
 
-The added files in this revision include Dee C's two no-decision fixes: an optional python-docx note in `requirements.txt`, and the combined disk figure corrected to 4,006,747,158 bytes in `RUN.md`. The analysis scripts are unchanged from the deposit-time sources.
+The added files in this revision include Dee C's two no-decision fixes: an optional python-docx note in `requirements.txt`, and the combined disk figure corrected to 4,006,747,158 bytes in `RUN.md`. The analysis scripts in the first commit were unchanged from the deposit-time sources.
+
+Commit 2 applies David's cleanup: the Phase 2 path comment in `code/v1_0_analysis/estimate_joint.py` was removed (the same edit as in the STAR copy). INTERNAL and UNREVIEWED strings were left unchanged. Hashes below are after that cleanup.
 
 ## Files
 
@@ -26,7 +28,7 @@ The added files in this revision include Dee C's two no-decision fixes: an optio
 | code/run_all.sh | 3,056 | b1fb78b9ea88a8669736e26103969e191bc17c3a4d309fe31c1a542aa40c803e | local package (not in the Zenodo deposit) |
 | code/test_checker_planted_errors.py | 4,692 | 044b399cd41ba6e94d357144638975285771d232f5fc96e6621d6642abb15d25 | local package (not in the Zenodo deposit) |
 | code/v1_0_analysis/SHA256SUMS-inputs.txt | 1,483 | 61e49872ea18761c9e0568f6bc2b6010ae3446c72f02ef1f4e180a3de1f41259 | local package (not in the Zenodo deposit) |
-| code/v1_0_analysis/estimate_joint.py | 10,146 | 0d3aebe9dcb6f56cd159c2644d582dfc29fe6a2253ecb516b2f91b95139ff8ce | local package (not in the Zenodo deposit) |
+| code/v1_0_analysis/estimate_joint.py | 10,027 | 3728591a4513a39f0141f2c5579df15695b4ddacbfbebc10ecf796bba4d1e017 | local package (not in the Zenodo deposit) |
 | code/v1_0_analysis/sensitivity/age_sensitivity.py | 11,473 | 8df310dabe42fca227bbd18d9d3e1886e540938dd9f38a82566e99232234c0a2 | local package (not in the Zenodo deposit) |
 | code/v1_0_analysis/sensitivity/with_without_std.py | 4,964 | e37819f2de197d6a9f29eb9dc85e8ea05a08b6d1ca56613bf1f607cf2c947f44 | local package (not in the Zenodo deposit) |
 | code/v1_0_analysis/supplementary_difference.py | 2,422 | ce86475fc728f81c69b7eb0c386ec8e4c091da3555e58e48c3235c30f56d88f6 | local package (not in the Zenodo deposit) |
@@ -40,14 +42,13 @@ The added files in this revision include Dee C's two no-decision fixes: an optio
 Code files present (excluding added RUN.md, requirements.txt, FILE_LIST.md): .py×12, .sh×1, .txt×1
 No data files found (no CSV, Parquet, XLSX, zip, or PUMS microdata).
 No credential, password, API key, or private-key material found.
-Phase 2 references in comments or tests (no Phase 2 files were opened or copied into this package):
-  - code/v1_0_analysis/estimate_joint.py:6: Same definitions and code logic as /workspace/smr-phase2/pums_joint.py (feasibility run), extended to
+No Phase 2 path comments remain.
 
 ## Notes for the scan
 
-- Scripts were not edited. Several files still contain leftover “INTERNAL” status strings (including `awac_estimate.py` and the reused Version 1.0 copies).
-- `code/v1_0_analysis/estimate_joint.py` mentions `/workspace/smr-phase2/pums_joint.py` in a comment (same bytes as the STAR script). That path was not opened and no Phase 2 file was copied.
+- Commit 2 removed the Phase 2 path comment in `code/v1_0_analysis/estimate_joint.py`. INTERNAL and UNREVIEWED strings, agent names, message ids, and decision quotes were left unchanged.
+- Several files still contain leftover “INTERNAL” status strings (including `awac_estimate.py` and the reused Version 1.0 copies). `awac_build_docs.py` writes an INTERNAL TECHNICAL SUMMARY label into its output, and `check_consistency_awac.py` requires that label.
 - `code/test_checker_planted_errors.py` refers to a folder name `validation-package-dee-c` only as an ignore pattern when copying a temporary run tree. That folder was not copied into this package.
 - No secrets. No Census microdata. No run outputs. No internal spreadsheets. No Phase 2, Stage B, quarantine, or MANIFEST-ADDENDUM files.
 
-This file (`FILE_LIST.md`) is added and is included in the zip.
+This file (`FILE_LIST.md`) is added and is included in the repository.

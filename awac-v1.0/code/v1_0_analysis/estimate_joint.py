@@ -2,9 +2,8 @@
 """SeniorMedRides first-phase production script (INTERNAL, UNREVIEWED until independent validation).
 
 Joint estimate from ACS 2020-2024 5-year PUMS: people age 65+ in housing units who have ambulatory
-difficulty (DPHY=1) AND live in a household with no vehicle (VEH=0), for eight study areas.
-Same definitions and code logic as /workspace/smr-phase2/pums_joint.py (feasibility run), extended to
-all eight areas, reading the frozen official zip files directly (no manual unzip step).
+difficulty (DPHY=1) AND live in a household with no vehicle (VEH=0), for eight study areas,
+reading the frozen official zip files directly (no manual unzip step).
 
 Definitions
   universe        : person records with AGEP>=65 whose SERIALNO matches a housing record with TYPEHUGQ=='1'

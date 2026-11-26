@@ -1,6 +1,6 @@
 """v1.1 quality checks for the age-standardized with/without contrast (author checks, not independent validation)."""
 import json, csv, pathlib, unittest
-B = pathlib.Path(__file__).resolve().parents[1]; V10 = pathlib.Path('/workspace/smr-phase1-estimates/sensitivity')
+B = pathlib.Path(__file__).resolve().parents[1]; V10 = pathlib.Path(__file__).resolve().parents[3] / 'v1.0-package' / 'sensitivity'
 class T(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
